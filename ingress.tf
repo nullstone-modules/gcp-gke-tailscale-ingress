@@ -1,3 +1,7 @@
+locals {
+  ingress_dns_name = "${local.service_name}-${local.env_name}-${local.stack_name}"
+}
+
 resource "kubernetes_ingress_v1" "this" {
   metadata {
     namespace = local.kubernetes_namespace
@@ -20,7 +24,7 @@ resource "kubernetes_ingress_v1" "this" {
     ingress_class_name = "tailscale"
 
     tls {
-      hosts = ["${local.service_name}-${local.env_name}-${local.stack_name}"]
+      hosts = [local.ingress_dns_name]
     }
 
     default_backend {
