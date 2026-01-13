@@ -1,0 +1,15 @@
+org_name: nullstone
+name: gcp-gke-tailscale-ingress
+friendly_name: Tailscale Ingress
+description: Creates an internal ingress for a GKE application that is accessible to the tailnet.
+category: capability
+subcategory: ingress
+provider_types:
+    - gcp
+platform: cloud-lb
+subplatform: tailscale
+type: ""
+appCategories:
+    - container
+is_public: true
+tool_name: ""
